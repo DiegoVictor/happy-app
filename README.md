@@ -15,7 +15,7 @@
   * [OS](#os)
 # Screenshots
 Click to expand.<br>
-<img src="https://raw.githubusercontent.com/DiegoVictor/happy-app/master/screenshots/map.jpg" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/happy-app/master/screenshots/map.png" width="32%" />
 
 # Installing
 Easy peasy lemon squeezy:
