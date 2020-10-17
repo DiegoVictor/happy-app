@@ -7,7 +7,7 @@ import OrphanageDetails from '../pages/OrphanageDetails';
 
 const { Navigator, Screen } = createStackNavigator();
 
-export default () => {
+const Routes: React.FC = () => {
   return (
     <NavigationContainer>
       <Navigator
@@ -21,3 +21,5 @@ export default () => {
     </NavigationContainer>
   );
 };
+
+export default Routes;

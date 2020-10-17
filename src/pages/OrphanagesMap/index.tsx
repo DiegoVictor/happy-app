@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 import MapMarker from '../../images/map-marker.png';
 import {
@@ -12,13 +13,12 @@ import {
   FooterText,
   CreateOrphanageButton,
 } from './styles';
-import { useNavigation } from '@react-navigation/native';
 
 const OrphanagesMap: React.FC = () => {
   const navigation = useNavigation();
   const handleNavigationToOrphanageDetails = useCallback(() => {
     navigation.navigate('OrphanageDetails');
-  });
+  }, [navigation]);
 
   return (
     <Container>
@@ -52,7 +52,7 @@ const OrphanagesMap: React.FC = () => {
 
       <Footer>
         <FooterText>2 orfanos encontrados</FooterText>
-        <CreateOrphanageButton onPress={() => {}}>
+        <CreateOrphanageButton>
           <Feather name="plus" size={20} color="#FFF" />
         </CreateOrphanageButton>
       </Footer>

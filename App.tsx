@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import {
   Nunito_600SemiBold,
@@ -9,7 +9,7 @@ import {
 
 import Routes from './src/routes';
 
-export default function App() {
+const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
     Nunito_600SemiBold,
     Nunito_700Bold,
@@ -26,4 +26,6 @@ export default function App() {
       <Routes />
     </>
   );
-}
+};
+
+export default App;
