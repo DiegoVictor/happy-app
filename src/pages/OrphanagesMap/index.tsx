@@ -20,6 +20,10 @@ const OrphanagesMap: React.FC = () => {
     navigation.navigate('OrphanageDetails');
   }, [navigation]);
 
+  const handleNavigationToCreateOrphanage = useCallback(() => {
+    navigation.navigate('SelectMapPosition');
+  }, [navigation]);
+
   return (
     <Container>
       <Map
