@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { Form } from '@unform/mobile';
+import * as ImagePicker from 'expo-image-picker';
 
 import Input from '../../../components/Input';
 import {
@@ -12,9 +13,32 @@ import {
   SwitchContainer,
   NextButton,
   NextButtonText,
+  UploadedImagesContainer,
+  UploadedImage,
 } from './styles';
 
-export default function OrphanageData() {
+  const [images, setImages] = useState<string[]>([]);
+  const handleSelectImage = useCallback(async () => {
+    const { status } = await ImagePicker.requestCameraRollPermissionsAsync();
+
+    if (status !== 'granted') {
+      Alert.alert('Ops! Precisamos de acesso a sua galeria!');
+    }
+
+    const result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      quality: 1,
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+    });
+
+    if (result.cancelled) {
+      return;
+    }
+
+    const { uri } = result;
+    setImages([...images, uri]);
+  }, [images]);
+
   return (
     <Container>
       <Form onSubmit={() => {}}>
@@ -30,7 +54,12 @@ export default function OrphanageData() {
         <Input name="whatsapp" />
 
         <Label>Fotos</Label>
-        <ImagesInput onPress={() => {}}>
+        <UploadedImagesContainer>
+          {images.map(image => (
+            <UploadedImage source={{ uri: image }} key={image} />
+          ))}
+        </UploadedImagesContainer>
+        <ImagesInput onPress={handleSelectImage}>
           <Feather name="plus" size={24} color="#15B6D6" />
         </ImagesInput>
 

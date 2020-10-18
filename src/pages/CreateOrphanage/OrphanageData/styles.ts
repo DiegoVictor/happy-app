@@ -56,3 +56,15 @@ export const ImagesInput = styled.TouchableOpacity`
   justify-content: center;
   margin-bottom: 32px;
 `;
+
+export const UploadedImagesContainer = styled.View`
+  flex-direction: row;
+`;
+
+export const UploadedImage = styled.Image`
+  border-radius: 20px;
+  height: 64px;
+  margin-bottom: 32px;
+  margin-right: 8;
+  width: 64px;
+`;
