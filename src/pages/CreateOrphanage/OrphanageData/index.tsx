@@ -102,8 +102,8 @@ const OrphanageData: React.FC = () => {
         <Label>Sobre</Label>
         <Input name="about" style={{ height: 110 }} multiline />
 
-        {/* <Label>Whatsapp</Label>
-        <Input name="whatsapp" /> */}
+        <Label>Whatsapp</Label>
+        <Input name="whatsapp" />
 
         <Label>Fotos</Label>
         <UploadedImagesContainer>
