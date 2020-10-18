@@ -1,10 +1,13 @@
-import React from 'react';
-import { Switch } from 'react-native';
+import React, { useCallback, useRef, useState } from 'react';
+import { Alert, Switch } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { Form } from '@unform/mobile';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import * as ImagePicker from 'expo-image-picker';
+import { FormHandles } from '@unform/core';
 
 import Input from '../../../components/Input';
+import api from '../../../services/api';
 import {
   Container,
   Title,
@@ -24,11 +27,49 @@ interface RouteParams {
   };
 }
 
+const OrphanageData: React.FC = () => {
   const route = useRoute();
   const { position } = route.params as RouteParams;
 
   const [openOnWeekends, setOpenOnWeekends] = useState(true);
   const [images, setImages] = useState<string[]>([]);
+
+  const navigation = useNavigation();
+  const formRef = useRef<FormHandles>(null);
+
+  const handleSubmit = useCallback(
+    async data => {
+      try {
+        const form = new FormData();
+
+        Object.keys(data).forEach(key => {
+          form.append(key, data[key]);
+        });
+        form.append('open_on_weekends', String(openOnWeekends));
+
+        if (position.latitude && position.longitude) {
+          form.append('latitude', String(position.latitude));
+          form.append('longitude', String(position.longitude));
+        }
+
+        images.forEach((image, index) => {
+          form.append('images', {
+            name: `image_${index}.jpg`,
+            uri: image,
+            type: 'images/jpg',
+          } as any);
+        });
+
+        await api.post('/orphanages', form);
+
+        navigation.navigate('OrphanageMap');
+      } catch (err) {
+        Alert.alert('Ops! Alguma coisa deu errado, tente novamente!');
+      }
+    },
+    [navigation, images, position, openOnWeekends],
+  );
+
   const handleSelectImage = useCallback(async () => {
     const { status } = await ImagePicker.requestCameraRollPermissionsAsync();
 
@@ -52,17 +93,17 @@ interface RouteParams {
 
   return (
     <Container>
-      <Form onSubmit={() => {}}>
+      <Form ref={formRef} onSubmit={handleSubmit}>
         <Title>Dados</Title>
 
         <Label>Nome</Label>
-        <Input name="nome" />
+        <Input name="name" />
 
         <Label>Sobre</Label>
         <Input name="about" style={{ height: 110 }} multiline />
 
-        <Label>Whatsapp</Label>
-        <Input name="whatsapp" />
+        {/* <Label>Whatsapp</Label>
+        <Input name="whatsapp" /> */}
 
         <Label>Fotos</Label>
         <UploadedImagesContainer>
@@ -92,10 +133,12 @@ interface RouteParams {
           />
         </SwitchContainer>
 
-        <NextButton onPress={() => {}}>
+        <NextButton onPress={() => formRef?.current?.submitForm()}>
           <NextButtonText>Cadastrar</NextButtonText>
         </NextButton>
       </Form>
     </Container>
   );
-}
+};
+
+export default OrphanageData;
