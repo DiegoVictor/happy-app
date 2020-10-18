@@ -42,7 +42,7 @@ const OrphanagesMap: React.FC = () => {
       const { data } = await api.get<Orphanage[]>('/orphanages');
       setOrphanages(data);
     })();
-  }, []);
+  });
 
   return (
     <Container>
