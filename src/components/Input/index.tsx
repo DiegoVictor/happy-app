@@ -4,8 +4,12 @@ import { useField } from '@unform/core';
 
 import { Container } from './styles';
 
-interface InputProps extends TextInputProps {
+interface InputProps {
   name: string;
+  style?: {
+    [key: string]: any;
+  };
+  multiline?: boolean;
 }
 
 interface InputRef {
