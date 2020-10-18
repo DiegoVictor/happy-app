@@ -9,12 +9,12 @@ export const Container = styled.ScrollView.attrs({
 
 export const Title = styled.Text`
   border-bottom-color: #d3e2e6;
-  border-bottom-width: 0.8;
+  border-bottom-width: 0.8px;
   color: #5c8599;
   font-family: Nunito_700Bold;
-  font-size: 24;
-  margin-bottom: 32;
-  padding-bottom: 24;
+  font-size: 24px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
 `;
 
 export const Label = styled.Text`
