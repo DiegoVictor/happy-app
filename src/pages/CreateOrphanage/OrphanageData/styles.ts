@@ -65,6 +65,6 @@ export const UploadedImage = styled.Image`
   border-radius: 20px;
   height: 64px;
   margin-bottom: 32px;
-  margin-right: 8;
+  margin-right: 8px;
   width: 64px;
 `;
