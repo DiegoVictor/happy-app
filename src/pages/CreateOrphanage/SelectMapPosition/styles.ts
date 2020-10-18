@@ -11,8 +11,8 @@ export const Container = styled.View`
 export const Map = styled(MapView)`
   flex: 1;
   position: relative;
-  height: ${Dimensions.get('window').height};
-  width: ${Dimensions.get('window').width};
+  height: ${Dimensions.get('window').height}px;
+  width: ${Dimensions.get('window').width}px;
 `;
 
 export const NextButton = styled(RectButton)`
