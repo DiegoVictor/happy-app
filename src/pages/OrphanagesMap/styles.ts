@@ -1,6 +1,7 @@
 import { Dimensions } from 'react-native';
 import styled from 'styled-components/native';
 import MapView from 'react-native-maps';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
   flex: 1;
@@ -46,7 +47,7 @@ export const FooterText = styled.Text`
   font-family: 'Nunito_700Bold';
 `;
 
-export const CreateOrphanageButton = styled.TouchableOpacity`
+export const CreateOrphanageButton = styled(RectButton)`
   align-items: center;
   background-color: #15c3d6;
   border-radius: 20px;
