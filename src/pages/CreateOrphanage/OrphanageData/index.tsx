@@ -27,6 +27,7 @@ interface RouteParams {
   const route = useRoute();
   const { position } = route.params as RouteParams;
 
+  const [openOnWeekends, setOpenOnWeekends] = useState(true);
   const [images, setImages] = useState<string[]>([]);
   const handleSelectImage = useCallback(async () => {
     const { status } = await ImagePicker.requestCameraRollPermissionsAsync();
@@ -86,6 +87,8 @@ interface RouteParams {
           <Switch
             thumbColor="#fff"
             trackColor={{ false: '#ccc', true: '#39CC83' }}
+            value={openOnWeekends}
+            onValueChange={setOpenOnWeekends}
           />
         </SwitchContainer>
 
