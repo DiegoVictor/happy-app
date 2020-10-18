@@ -17,6 +17,16 @@ import {
   UploadedImage,
 } from './styles';
 
+interface RouteParams {
+  position: {
+    latitude: number;
+    longitude: number;
+  };
+}
+
+  const route = useRoute();
+  const { position } = route.params as RouteParams;
+
   const [images, setImages] = useState<string[]>([]);
   const handleSelectImage = useCallback(async () => {
     const { status } = await ImagePicker.requestCameraRollPermissionsAsync();
