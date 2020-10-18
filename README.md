@@ -6,10 +6,14 @@
 [![expo](https://img.shields.io/badge/expo-39.0.3-000000?style=flat-square&logo=expo)](https://expo.io/)
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/DiegoVictor/bethehero-app/blob/master/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
+This app version allow everyone to see all available orphanages. All the resources used by this application comes from its [`API`](https://github.com/DiegoVictor/happy-api).
 
 ## Table of Contents
 * [Screenshots](#screenshots)
 * [Installing](#installing)
+  * [Configuring](#configuring)
+    * [.env](#env)
+    * [API](#api)
 * [Usage](#usage)
   * [Expo](#expo)
   * [OS](#os)
@@ -28,6 +32,19 @@ $ npm install
 ```
 > Was installed and configured the [`eslint`](https://eslint.org/) and [`prettier`](https://prettier.io/) to keep the code clean and patterned.
 
+## Configuring
+Configure your environment variables and remember to start the [API](https://github.com/DiegoVictor/happy-api) before to start this app.
+
+### .env
+In this file you may configure the API's url. Rename the `.env.example` in the root directory to `.env` then just update with your settings.
+
+key|description|default
+---|---|---
+API_URL|API's url with version (v1)|`http://localhost:3333/v1`
+
+### API
+Start the [`API`](https://github.com/DiegoVictor/happy-api) (see its README for more information). In case of any change in the API's port or host remember to update the `.env` too.
+> Also, maybe you need run reverse command to the API's port: `adb reverse tcp:3333 tcp:3333`
 
 # Usage
 To start the app run:
