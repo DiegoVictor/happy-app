@@ -4,7 +4,7 @@ import MapView from 'react-native-maps';
 import styled, { css } from 'styled-components/native';
 
 interface ScheduleColors {
-  color: 'blue' | 'green';
+  color: 'blue' | 'green' | 'red';
 }
 
 export const Container = styled.ScrollView`
@@ -69,7 +69,7 @@ export const Separator = styled.View`
   width: 100%;
 `;
 
-export const RoutesContainer = styled.View`
+export const RoutesContainer = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   padding: 16px;
@@ -115,6 +115,14 @@ export const ScheduleItem = styled.View<ScheduleColors>`
           border-radius: 20px;
           border-width: 1px;
         `;
+
+      case 'red':
+        return css`
+          background-color: #fef6f9;
+          border-color: #ffbcd4;
+          border-radius: 20px;
+          border-width: 1px;
+        `;
     }
   }}
 `;
@@ -135,6 +143,11 @@ export const ScheduleText = styled.Text<ScheduleColors>`
       case 'green':
         return css`
           color: #37c77f;
+        `;
+
+      case 'red':
+        return css`
+          color: #ff669d;
         `;
     }
   }}
