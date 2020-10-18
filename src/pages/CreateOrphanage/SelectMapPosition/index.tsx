@@ -5,7 +5,7 @@ import { MapEvent, Marker } from 'react-native-maps';
 import mapMarkerImg from '../../../images/map-marker.png';
 import { Container, Map, NextButton, NextButtonText } from './styles';
 
-export default function SelectMapPosition() {
+const SelectMapPosition: React.FC = () => {
   const navigation = useNavigation();
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
 
@@ -40,4 +40,6 @@ export default function SelectMapPosition() {
       )}
     </Container>
   );
-}
+};
+
+export default SelectMapPosition;
