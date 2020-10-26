@@ -10,6 +10,15 @@
     "eject": "expo eject",
     "test": "jest"
   },
+  "jest": {
+    "preset": "jest-expo",
+    "collectCoverage": true,
+    "coverageDirectory": "tests/coverage",
+    "collectCoverageFrom": [
+      "src/components/**/*.tsx",
+      "src/pages/**/*.tsx"
+    ]
+  },
   "dependencies": {
     "@expo-google-fonts/nunito": "^0.1.0",
     "@expo/vector-icons": "^10.2.1",
@@ -38,6 +47,9 @@
   "devDependencies": {
     "@babel/core": "~7.9.0",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@testing-library/jest-native": "^3.4.3",
+    "@testing-library/react-native": "^7.0.2",
+    "@types/jest": "^26.0.14",
     "@types/react": "~16.9.35",
     "@types/react-dom": "~16.9.8",
     "@types/react-native": "~0.63.2",
@@ -54,6 +66,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^4.1.2",
+    "jest-expo": "^39.0.0",
     "prettier": "^2.1.2",
     "typescript": "~3.9.5"
   },
