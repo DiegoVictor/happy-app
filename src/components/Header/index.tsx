@@ -20,12 +20,12 @@ const Header: React.FC<HeaderProps> = ({ title, showCancel = true }) => {
 
   return (
     <Container>
-      <BorderlessButton onPress={navigation.goBack}>
+      <BorderlessButton onPress={navigation.goBack} testID="goback">
         <Feather name="arrow-left" size={24} color="#15b6d6" />
       </BorderlessButton>
       <Title>{title}</Title>
       {showCancel ? (
-        <BorderlessButton onPress={handleNavigationToHomepage}>
+        <BorderlessButton onPress={handleNavigationToHomepage} testID="close">
           <Feather name="x" size={24} color="#ff669d" />
         </BorderlessButton>
       ) : (
