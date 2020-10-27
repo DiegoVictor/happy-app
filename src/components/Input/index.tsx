@@ -10,6 +10,7 @@ interface InputProps {
     [key: string]: any;
   };
   multiline?: boolean;
+  testID: string;
 }
 
 interface InputRef {
