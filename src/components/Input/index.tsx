@@ -21,7 +21,7 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = ({
   ...rest
 }) => {
   const inputRef = useRef<any>(null);
-  const { fieldName, registerField, defaultValue, error } = useField(name);
+  const { fieldName, registerField, defaultValue } = useField(name);
 
   useEffect(() => {
     registerField<string>({
