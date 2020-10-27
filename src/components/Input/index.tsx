@@ -28,15 +28,6 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = ({
     registerField<string>({
       name: fieldName,
       ref: inputRef.current,
-      clearValue(ref) {
-        ref.value = '';
-
-        ref.clear();
-      },
-      setValue(ref: any, value) {
-        ref.setNativeProps({ text: value });
-        inputRef.current.value = value;
-      },
       getValue(ref) {
         return ref.value;
       },
