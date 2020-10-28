@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      API_URL: 'http://localhost:3333/v1'
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - uses: actions/checkout@v2
+      - name: Run test
+        run: |
+          npm install
+          npm run test
+      - uses: codecov/codecov-action@v1
+        with:
+          directory: ./tests/coverage/
