@@ -34,7 +34,7 @@ const SelectMapPosition: React.FC = () => {
       </Map>
 
       {position.latitude !== 0 && (
-        <NextButton onPress={handleNextStep}>
+        <NextButton onPress={handleNextStep} testID="next">
           <NextButtonText>Próximo</NextButtonText>
         </NextButton>
       )}
