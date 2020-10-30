@@ -17,6 +17,9 @@ This app version allow everyone to see all available orphanages. All the resourc
 * [Usage](#usage)
   * [Expo](#expo)
   * [OS](#os)
+* [Running the tests](#running-the-tests)
+  * [Coverage report](#coverage-report)
+
 # Screenshots
 Click to expand.<br>
 <img src="https://raw.githubusercontent.com/DiegoVictor/happy-app/master/screenshots/map.png" width="32%" />
@@ -63,3 +66,15 @@ $ npm run start
 ## OS
 This app was tested only with Android through USB connection and [Genymotion](https://www.genymotion.com/) (Emulator), is strongly recommended to use the same operational system, but of course you can use an emulator or a real device connected through wifi or USB.
 
+# Running the tests
+[Jest](https://jestjs.io/) was the choice to test the app, to run:
+```
+$ yarn test
+```
+Or:
+```
+$ npm run test
+```
+
+## Coverage report
+You can see the coverage report inside `tests/coverage`. They are automatically created after the tests run.
