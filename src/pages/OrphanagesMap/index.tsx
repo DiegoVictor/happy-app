@@ -67,10 +67,12 @@ const OrphanagesMap: React.FC = () => {
               latitude: orphanage.latitude,
               longitude: orphanage.longitude,
             }}
+            testID={`marker_${orphanage.id}`}
           >
             <Callout
               tooltip
               onPress={() => handleNavigationToOrphanageDetails(orphanage.id)}
+              testID={`callout_${orphanage.id}`}
             >
               <CalloutContainer>
                 <CalloutText>{orphanage.name}</CalloutText>
@@ -82,7 +84,10 @@ const OrphanagesMap: React.FC = () => {
 
       <Footer>
         <FooterText>{orphanages.length} orfano(s) encontrado(s)</FooterText>
-        <CreateOrphanageButton onPress={handleNavigationToCreateOrphanage}>
+        <CreateOrphanageButton
+          onPress={handleNavigationToCreateOrphanage}
+          testID="create"
+        >
           <Feather name="plus" size={20} color="#FFF" />
         </CreateOrphanageButton>
       </Footer>
