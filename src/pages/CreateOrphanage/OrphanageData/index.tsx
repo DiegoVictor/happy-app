@@ -47,10 +47,8 @@ const OrphanageData: React.FC = () => {
         });
         form.append('open_on_weekends', String(openOnWeekends));
 
-        if (position.latitude && position.longitude) {
-          form.append('latitude', String(position.latitude));
-          form.append('longitude', String(position.longitude));
-        }
+        form.append('latitude', String(position.latitude));
+        form.append('longitude', String(position.longitude));
 
         images.forEach((image, index) => {
           form.append('images', {
