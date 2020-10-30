@@ -118,7 +118,7 @@ const OrphanageDetails: React.FC = () => {
             />
           </Map>
 
-          <RoutesContainer onPress={handleOpenGoogleMapRoutes}>
+          <RoutesContainer onPress={handleOpenGoogleMapRoutes} testID="gmap">
             <RoutesText>Ver rotas no Google Maps</RoutesText>
           </RoutesContainer>
         </MapContainer>
@@ -148,7 +148,7 @@ const OrphanageDetails: React.FC = () => {
           )}
         </ScheduleContainer>
 
-        <ContactButton onPress={handleOpenWhatsApp}>
+        <ContactButton onPress={handleOpenWhatsApp} testID="whatsapp">
           <FontAwesome name="whatsapp" size={24} color="#FFF" />
           <ContactButtonText>Entrar em contato</ContactButtonText>
         </ContactButton>
