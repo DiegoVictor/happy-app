@@ -95,13 +95,13 @@ const OrphanageData: React.FC = () => {
         <Title>Dados</Title>
 
         <Label>Nome</Label>
-        <Input name="name" />
+        <Input name="name" testID="name" />
 
         <Label>Sobre</Label>
-        <Input name="about" style={{ height: 110 }} multiline />
+        <Input name="about" testID="about" style={{ height: 110 }} multiline />
 
         <Label>Whatsapp</Label>
-        <Input name="whatsapp" />
+        <Input name="whatsapp" testID="whatsapp" />
 
         <Label>Fotos</Label>
         <UploadedImagesContainer>
@@ -109,17 +109,22 @@ const OrphanageData: React.FC = () => {
             <UploadedImage source={{ uri: image }} key={image} />
           ))}
         </UploadedImagesContainer>
-        <ImagesInput onPress={handleSelectImage}>
+        <ImagesInput onPress={handleSelectImage} testID="image">
           <Feather name="plus" size={24} color="#15B6D6" />
         </ImagesInput>
 
         <Title>Visitação</Title>
 
         <Label>Instruções</Label>
-        <Input name="instructions" style={{ height: 110 }} multiline />
+        <Input
+          name="instructions"
+          testID="instructions"
+          style={{ height: 110 }}
+          multiline
+        />
 
         <Label>Horario de visitas</Label>
-        <Input name="opening_hours" />
+        <Input name="opening_hours" testID="opening_hours" />
 
         <SwitchContainer>
           <Label>Atende final de semana?</Label>
@@ -128,10 +133,14 @@ const OrphanageData: React.FC = () => {
             trackColor={{ false: '#ccc', true: '#39CC83' }}
             value={openOnWeekends}
             onValueChange={setOpenOnWeekends}
+            testID="open_on_weekends"
           />
         </SwitchContainer>
 
-        <NextButton onPress={() => formRef?.current?.submitForm()}>
+        <NextButton
+          onPress={() => formRef?.current?.submitForm()}
+          testID="submit"
+        >
           <NextButtonText>Cadastrar</NextButtonText>
         </NextButton>
       </Form>
