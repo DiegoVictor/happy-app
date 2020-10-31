@@ -67,6 +67,70 @@ jest.mock('expo-image-picker', () => {
   };
 });
 
+jest.mock('react-native', () => {
+  const { useState } = require('react');
+  const {
+    Alert,
+    View,
+    NativeModules,
+    UIManager,
+    ViewPropTypes,
+    requireNativeComponent,
+    Platform,
+    DeviceEventEmitter,
+    StyleSheet,
+    TextInput,
+    Animated,
+    I18nManager,
+    ScrollView,
+    Text,
+    TouchableOpacity,
+    Image,
+    processColor,
+    Touchable,
+    findNodeHandle,
+  } = jest.requireActual('react-native');
+
+  return {
+    findNodeHandle,
+    Alert,
+    NativeModules,
+    UIManager,
+    ViewPropTypes,
+    requireNativeComponent,
+    DeviceEventEmitter,
+    StyleSheet,
+    TextInput,
+    I18nManager,
+    ScrollView,
+    Text,
+    Animated,
+    View,
+    TouchableOpacity,
+    Image,
+    processColor,
+    Touchable,
+    Platform: {
+      ...Platform,
+      OS: 'android',
+      Version: 123,
+      select: (objs: { [key: string]: any }) => objs['android'],
+    },
+    Switch: (props: { [key: string]: any }) => {
+      const [value, setValue] = useState(props.value);
+      return (
+        <View
+          onPress={() => {
+            props.onValueChange(!value);
+            setValue(!value);
+          }}
+          testID={props.testID}
+        ></View>
+      );
+    },
+  };
+});
+
 global.FormData = FormData;
 
 describe('OrphanageData', () => {
