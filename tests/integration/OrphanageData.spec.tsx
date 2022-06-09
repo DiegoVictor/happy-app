@@ -1,7 +1,7 @@
 import React from 'react';
 import { act, fireEvent, render } from '@testing-library/react-native';
 import MockAdapter from 'axios-mock-adapter';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { Alert } from 'react-native';
 
 import OrphanageData from '../../src/pages/CreateOrphanage/OrphanageData';

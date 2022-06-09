@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, waitFor } from '@testing-library/react-native';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 import SelectMapPosition from '../../src/pages/CreateOrphanage/SelectMapPosition';
 
