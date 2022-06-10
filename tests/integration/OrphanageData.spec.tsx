@@ -67,6 +67,15 @@ jest.mock('expo-image-picker', () => {
   };
 });
 
+jest.mock('react-native-gesture-handler', () => {
+  const { View } = require('react-native');
+  return {
+    RectButton: function ({ children, ...props }: { children: JSX.Element }) {
+      return <View {...props}>{children}</View>;
+    },
+  };
+});
+
 jest.mock('react-native', () => {
   const { useState } = require('react');
   const {
@@ -74,7 +83,6 @@ jest.mock('react-native', () => {
     View,
     NativeModules,
     UIManager,
-    ViewPropTypes,
     requireNativeComponent,
     Platform,
     DeviceEventEmitter,
@@ -96,7 +104,6 @@ jest.mock('react-native', () => {
     Alert,
     NativeModules,
     UIManager,
-    ViewPropTypes,
     requireNativeComponent,
     DeviceEventEmitter,
     StyleSheet,
@@ -141,7 +148,7 @@ describe('OrphanageData', () => {
 
     apiMock.onPost('/orphanages').reply(200);
 
-    const { getByTestId } = render(<OrphanageData />);
+    const { getByTestId, debug } = render(<OrphanageData />);
 
     fireEvent.changeText(getByTestId('name'), orphanage.name);
     fireEvent.changeText(getByTestId('about'), orphanage.about);
