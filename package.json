@@ -10,15 +10,6 @@
     "eject": "expo eject",
     "test": "jest --runInBand"
   },
-  "jest": {
-    "preset": "jest-expo",
-    "collectCoverage": true,
-    "coverageDirectory": "tests/coverage",
-    "collectCoverageFrom": [
-      "src/components/**/*.tsx",
-      "src/pages/**/*.tsx"
-    ]
-  },
   "dependencies": {
     "@expo-google-fonts/nunito": "^0.1.0",
     "@expo/vector-icons": "^10.0.0",
