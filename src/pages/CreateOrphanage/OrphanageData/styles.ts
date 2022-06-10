@@ -23,7 +23,7 @@ export const Label = styled.Text`
   margin-bottom: 8px;
 `;
 
-export const NextButton = styled(RectButton)`
+export const NextButton = styled(RectButton)<{ children: JSX.Element }>`
   align-items: center;
   background-color: #15c3d6;
   border-radius: 20px;
