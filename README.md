@@ -8,7 +8,7 @@
 [![jest](https://img.shields.io/badge/jest-25.5.4-brightgreen?style=flat-square&logo=jest)](https://jestjs.io/)
 [![expo](https://img.shields.io/badge/expo-39.0.3-000000?style=flat-square&logo=expo)](https://expo.io/)
 [![coverage](https://img.shields.io/codecov/c/gh/DiegoVictor/happy-app?logo=codecov&style=flat-square)](https://codecov.io/gh/DiegoVictor/happy-app)
-[![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/DiegoVictor/happy-app/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/DiegoVictor/happy-app/blob/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
 This app version allow everyone to see all available orphanages. All the resources used by this application comes from its [`API`](https://github.com/DiegoVictor/happy-api).
 
