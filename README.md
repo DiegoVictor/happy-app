@@ -26,10 +26,10 @@ This app version allow everyone to see all available orphanages. All the resourc
 
 # Screenshots
 Click to expand.<br>
-<img src="https://raw.githubusercontent.com/DiegoVictor/happy-app/master/screenshots/map.png" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/happy-app/master/screenshots/detail.gif" width="31.3%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/happy-app/master/screenshots/select-position.png" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/happy-app/master/screenshots/create.gif" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/happy-app/main/screenshots/map.png" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/happy-app/main/screenshots/detail.gif" width="31.3%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/happy-app/main/screenshots/select-position.png" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/happy-app/main/screenshots/create.gif" width="32%" />
 
 # Installing
 Easy peasy lemon squeezy:
