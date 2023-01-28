@@ -1,5 +1,5 @@
 # [App] Happy
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DiegoVictor/happy-app/Pipeline?logo=github&style=flat-square)](https://github.com/DiegoVictor/happy-app/actions)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/DiegoVictor/happy-app/config.yml?logo=github&style=flat-square)](https://github.com/DiegoVictor/happy-app/actions)
 [![typescript](https://img.shields.io/badge/typescript-3.9.7-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![react-native](https://img.shields.io/badge/react--native-0.63.2-61dafb?style=flat-square&logo=react)](https://reactnative.dev/)
 [![styled-components](https://img.shields.io/badge/styled_components-5.2.0-db7b86?style=flat-square&logo=styled-components)](https://styled-components.com/)
@@ -8,7 +8,7 @@
 [![jest](https://img.shields.io/badge/jest-25.5.4-brightgreen?style=flat-square&logo=jest)](https://jestjs.io/)
 [![expo](https://img.shields.io/badge/expo-39.0.3-000000?style=flat-square&logo=expo)](https://expo.io/)
 [![coverage](https://img.shields.io/codecov/c/gh/DiegoVictor/happy-app?logo=codecov&style=flat-square)](https://codecov.io/gh/DiegoVictor/happy-app)
-[![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/DiegoVictor/happy-app/blob/main/LICENSE)
+[![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://raw.githubusercontent.com/DiegoVictor/happy-app/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
 This app version allow everyone to see all available orphanages. All the resources used by this application comes from its [`API`](https://github.com/DiegoVictor/happy-api).
 
